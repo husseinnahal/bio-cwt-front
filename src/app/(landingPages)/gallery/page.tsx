@@ -1,13 +1,7 @@
-import { AboutSection } from "@/components/about-section"
-import { AdvantagesSection } from "@/components/advantages-section"
-import { HeroSection } from "@/components/hero-section"
 import { OurWorkSection } from "@/components/our-work-section"
-import { QuestionsSection } from "@/components/questions-section"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
 import { WoodTypesSection } from "@/components/wood-types-section"
+import { QuestionsSection } from "@/components/questions-section"
 
-// Fetch CMS configurations from the NestJS backend
 async function getCmsData() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
   try {
@@ -37,24 +31,37 @@ async function getWoodTypes() {
   }
 }
 
-export default async function Home() {
+
+
+export default async function Gallery() {
   const [cmsData, woodTypes] = await Promise.all([
     getCmsData(),
     getWoodTypes(),
   ]);
 
   return (
-    <div className="min-h-screen bg-background bg-repeat" style={{ backgroundImage: "url('/background.png')", backgroundSize: '100% auto' }}>
-      <SiteHeader />
-      <main>
-        <HeroSection data={cmsData?.hero} />
-        <WoodTypesSection data={woodTypes} />
+    <>
+    
         <OurWorkSection data={cmsData?.ourWork} />
-        <AdvantagesSection data={cmsData?.advantages} />
-        <AboutSection data={cmsData?.about} />
-        <QuestionsSection />
-      </main>
-      <SiteFooter />
-    </div>
+        <WoodTypesSection data={woodTypes} />
+      <QuestionsSection/>
+    </>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

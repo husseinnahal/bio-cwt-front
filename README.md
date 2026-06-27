@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bio CWT - Next.js Frontend
 
-## Getting Started
+This is the frontend web application for the Bio CWT Wood Species and Services CMS project. It includes the customer-facing landing website (Services Pricing, Custom Wood Products, Gallery, Contact, About Us) and the restricted Administrative Dashboard.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Setup & Installation Instructions
+
+### Prerequisites
+* [Node.js](https://nodejs.org/) (v18 or higher)
+* Backend API server running at `http://localhost:3000`
+
+### Step-by-Step Run Guide
+1. Navigate to the frontend directory:
+   ```bash
+   cd front
+   ```
+2. Install the package dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+4. Open your browser and navigate to **`http://localhost:3001`** (or the port specified in your console).
+
+---
+
+## 🔑 Environment Variables
+Create a file named `.env.local` in the root of the `front/` directory and configure the backend URL path:
+```env
+NEXT_PUBLIC_API_URL="http://localhost:3000/api"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 How to Log In to the Admin Panel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The dashboard lets you manage all live services pricing matrices, add custom wood species specs, upload new showcase imagery, and update homepage text content.
 
-## Learn More
+1. Navigate to the login route in your browser:
+   * **URL:** **`http://localhost:3001/login`**
+2. Enter the default administrator seed credentials:
+   * **Email:** `admin@wood.com`
+   * **Password:** `admin123`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧱 Frontend Architecture Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Framework:** Next.js 15 (utilizing App Router)
+* **Styling & Layout:** Tailwind CSS & responsive design grids. Staggered visual cards and sliders are built for both mobile views and full desktop screens.
+* **State & Data Flow:**
+  * Landing page components pull configuration details dynamically from the backend `GET /api/cms` and `GET /api/services` endpoints.
+  * The `/dashboard` route group uses React hooks (`useState`, `useEffect`) and an integrated `ApiClient` to perform authenticated CRUD calls with backend storage.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤖 AI Tools Used
+* **Antigravity IDE Agent** by Google DeepMind (Advanced Agentic Coding): Used for creating Next.js page layouts, designing UI grids, managing page states, setting up frontend pricing calculators, adding client-side form validations, and setting up dashboard views.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⏱️ Development Time Spent
+* **Timeline:** 2 days
+* **Total Time Invested:** ~12 hours of active work (engineering layout structures, styling details, and admin dashboard panels).
