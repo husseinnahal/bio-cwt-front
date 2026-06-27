@@ -1,7 +1,7 @@
+import { store } from '@/store';
+import { clearAuth, setAccessToken } from '@/store/authSlice';
 import axios, { AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
-import { store } from '@/store';
-import { setAccessToken, clearAuth } from '@/store/authSlice';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
@@ -148,23 +148,23 @@ class ApiClient {
   }
 
   // Helper for GET requests
-  static async get(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
-    return api.get(endpoint, options) as any;
+  static async get(endpoint: string, options?: AxiosRequestConfig) {
+    return api.get(endpoint, options);
   }
 
   // Helper for POST requests
-  static async post(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
-    return api.post(endpoint, body, options) as any;
+  static async post(endpoint: string, body: any, options?: AxiosRequestConfig) {
+    return api.post(endpoint, body, options);
   }
 
   // Helper for PUT requests
-  static async put(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
-    return api.put(endpoint, body, options) as any;
+  static async put(endpoint: string, body: any, options?: AxiosRequestConfig) {
+    return api.put(endpoint, body, options);
   }
 
   // Helper for DELETE requests
-  static async delete(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
-    return api.delete(endpoint, options) as any;
+  static async delete(endpoint: string, options?: AxiosRequestConfig) {
+    return api.delete(endpoint, options);
   }
 
   // Backwards compatibility custom request wrapper
