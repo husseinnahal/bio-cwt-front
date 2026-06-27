@@ -148,23 +148,23 @@ class ApiClient {
   }
 
   // Helper for GET requests
-  static async get(endpoint: string, options?: AxiosRequestConfig) {
-    return api.get(endpoint, options);
+  static async get(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
+    return api.get(endpoint, options) as any;
   }
 
   // Helper for POST requests
-  static async post(endpoint: string, body: any, options?: AxiosRequestConfig) {
-    return api.post(endpoint, body, options);
+  static async post(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
+    return api.post(endpoint, body, options) as any;
   }
 
   // Helper for PUT requests
-  static async put(endpoint: string, body: any, options?: AxiosRequestConfig) {
-    return api.put(endpoint, body, options);
+  static async put(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
+    return api.put(endpoint, body, options) as any;
   }
 
   // Helper for DELETE requests
-  static async delete(endpoint: string, options?: AxiosRequestConfig) {
-    return api.delete(endpoint, options);
+  static async delete(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
+    return api.delete(endpoint, options) as any;
   }
 
   // Backwards compatibility custom request wrapper
