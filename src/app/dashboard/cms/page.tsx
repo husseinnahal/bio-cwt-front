@@ -12,9 +12,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 type Tab = 'hero' | 'about' | 'advantages' | 'ourWork';
 
 export default function CmsPage() {
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState<Tab>('hero');
-  const [cmsData, setCmsData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -29,10 +27,7 @@ export default function CmsPage() {
     // Fetch all current CMS settings
     const loadCmsData = async () => {
       try {
-        const data: any = await ApiClient.get('/cms');
-        setCmsData(data);
-        console.log(data);
-        
+        const data: unknown = await ApiClient.get('/cms');       
         if (data.hero) {
           setHeroForm({
             title: data.hero.title || '',
@@ -40,24 +35,24 @@ export default function CmsPage() {
             images: data.hero.images || ['', '', ''],
           });
         }
-        if (data.about) {
+        // if (data.about) {
           setAboutForm({
             description: data.about.description || '',
             images: data.about.images || ['', '', ''],
           });
-        }
-        if (data.advantages) {
+        // }
+        // if (data.advantages) {
           setAdvantagesForm({
             title: data.advantages.title || '',
             advantages: data.advantages.advantages || [''],
             image: data.advantages.image || '',
           });
-        }
-        if (data.ourWork) {
+        // }
+        // if (data.ourWork) {
           setOurWorkForm({
             images: data.ourWork.images || [{ src: '', alt: '' }],
           });
-        }
+        // }
       } catch (error) {
         console.error('Failed to load CMS data', error);
         showStatus('error', 'Failed to retrieve website content configurations.');
