@@ -19,7 +19,7 @@ This is the frontend web application for the Bio CWT Wood Species and Services C
    ```bash
    npm run dev
    ```
-3. Open your browser and navigate to **`https://bio-cwt-front.vercel.app` ** (or the port specified in your console).
+3. Open your browser and navigate to **`https://bio-cwt-delta.vercel.app`** (or the port specified in your console for local runs).
 
 ---
 
@@ -36,7 +36,7 @@ NEXT_PUBLIC_API_URL="https://bio-cwt-apis.onrender.com/api"
 The dashboard lets you manage all live services pricing matrices, add custom wood species specs, upload new showcase imagery, and update homepage text content.
 
 1. Navigate to the login route in your browser:
-   * **URL:** **`https://bio-cwt-front.vercel.app/login`**
+   * **URL:** **`https://bio-cwt-delta.vercel.app/login`**
 2. Enter the default administrator seed credentials:
    * **Email:** `admin@wood.com`
    * **Password:** `admin123`
@@ -54,10 +54,10 @@ The dashboard lets you manage all live services pricing matrices, add custom woo
 ---
 
 ## 🤖 AI Tools Used
-* **Antigravity IDE Agent** by Google DeepMind 
+* **Claude (Anthropic)**: Used for implementing core frontend layout and dashboard management functionalities.
 
 ---
 
 ## ⏱️ Development Time Spent
 * **Timeline:** 1 day
-* **Total Time Invested:** ~6 hours of active work (engineering layout structures, styling details, and admin dashboard panels).
+* **Total Time Invested:** ~7 hours of active work (engineering layout structures, styling details, and admin dashboard panels).
