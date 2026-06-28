@@ -52,7 +52,7 @@ export default function LoginPage() {
 
     setIsLoading(true);
     try {
-      const data = await ApiClient.post('/auth/login', { email, password });
+      const data : any = await ApiClient.post('/auth/login', { email, password });
       ApiClient.setTokens(data.access_token, data.refresh_token);
       router.push('/dashboard');
     } catch (err: any) {

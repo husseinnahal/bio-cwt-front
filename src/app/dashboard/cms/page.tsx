@@ -27,7 +27,7 @@ export default function CmsPage() {
     // Fetch all current CMS settings
     const loadCmsData = async () => {
       try {
-        const data: unknown = await ApiClient.get('/cms');       
+        const data: any = await ApiClient.get('/cms');       
         if (data.hero) {
           setHeroForm({
             title: data.hero.title || '',
