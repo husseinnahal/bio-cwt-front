@@ -7,6 +7,9 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { WoodTypesSection } from "@/components/wood-types-section"
 
+export const dynamic = 'force-dynamic';
+
+
 // Fetch CMS configurations from the NestJS backend
 async function getCmsData() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';

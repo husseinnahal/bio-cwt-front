@@ -2,6 +2,9 @@ import { AboutSection } from "@/components/about-section"
 import { OurWorkSection } from "@/components/our-work-section"
 import { QuestionsSection } from "@/components/questions-section"
 
+export const dynamic = 'force-dynamic';
+
+
 // Fetch CMS configurations from the NestJS backend
 async function getCmsData() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';

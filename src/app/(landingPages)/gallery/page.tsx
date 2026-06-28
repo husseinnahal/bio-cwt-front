@@ -2,6 +2,9 @@ import { OurWorkSection } from "@/components/our-work-section"
 import { WoodTypesSection } from "@/components/wood-types-section"
 import { QuestionsSection } from "@/components/questions-section"
 
+export const dynamic = 'force-dynamic';
+
+
 async function getCmsData() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
   try {
