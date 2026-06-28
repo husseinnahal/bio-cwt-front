@@ -56,6 +56,7 @@ export default function LoginPage() {
       ApiClient.setTokens(data.access_token, data.refresh_token);
       router.push('/dashboard');
     } catch (err: any) {
+      console.log(err)
       setApiError(err.message || 'Login failed. Please check your credentials.');
     } finally {
       setIsLoading(false);
