@@ -19,7 +19,7 @@ This is the frontend web application for the Bio CWT Wood Species and Services C
    ```bash
    npm run dev
    ```
-3. Open your browser and navigate to **`https://bio-cwt-front.vercel.app`** (or the port specified in your console).
+3. Open your browser and navigate to **`https://bio-cwt-front.vercel.app` ** (or the port specified in your console).
 
 ---
 

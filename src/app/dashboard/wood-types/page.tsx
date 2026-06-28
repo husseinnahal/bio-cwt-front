@@ -42,7 +42,7 @@ export default function WoodTypesManager() {
   const loadProducts = async () => {
     setIsLoading(true);
     try {
-      const data = await ApiClient.get('/wood-types');
+      const data: any = await ApiClient.get('/wood-types');
       setProducts(data);
     } catch (err: any) {
       console.error('Failed to load wood types', err);

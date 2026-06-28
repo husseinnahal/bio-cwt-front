@@ -23,7 +23,7 @@ export default function DashboardLayout({
       }
 
       try {
-        const userData = await ApiClient.get('/users/me');
+        const userData: any = await ApiClient.get('/users/me');
         setAdmin(userData);
       } catch (error) {
         console.error('Failed to load profile', error);

@@ -148,27 +148,27 @@ class ApiClient {
   }
 
   // Helper for GET requests
-  static async get(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
-    return api.get(endpoint, options) as any;
+  static async get(endpoint: string, options?: AxiosRequestConfig): Promise<unknown> {
+    return api.get(endpoint, options) as unknown;
   }
 
   // Helper for POST requests
-  static async post(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
-    return api.post(endpoint, body, options) as any;
+  static async post(endpoint: string, body: unknown, options?: AxiosRequestConfig): Promise<unknown> {
+    return api.post(endpoint, body, options) as unknown;
   }
 
   // Helper for PUT requests
-  static async put(endpoint: string, body: any, options?: AxiosRequestConfig): Promise<any> {
-    return api.put(endpoint, body, options) as any;
+  static async put(endpoint: string, body: unknown, options?: AxiosRequestConfig): Promise<unknown> {
+    return api.put(endpoint, body, options) as unknown;
   }
 
   // Helper for DELETE requests
-  static async delete(endpoint: string, options?: AxiosRequestConfig): Promise<any> {
-    return api.delete(endpoint, options) as any;
+  static async delete(endpoint: string, options?: AxiosRequestConfig): Promise<unknown> {
+    return api.delete(endpoint, options) as unknown;
   }
 
   // Backwards compatibility custom request wrapper
-  static async request(endpoint: string, options: AxiosRequestConfig & { body?: any } = {}): Promise<any> {
+  static async request(endpoint: string, options: AxiosRequestConfig & { body?: unknown } = {}): Promise<any> {
     const { body, ...config } = options;
     return api({
       url: endpoint,

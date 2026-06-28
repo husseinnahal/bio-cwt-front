@@ -40,7 +40,7 @@ export default function ServicesManager() {
   const loadServices = async () => {
     setIsLoading(true);
     try {
-      const data = await ApiClient.get('/services');
+      const data: any = await ApiClient.get('/services');
       setServices(data);
     } catch (err: any) {
       console.error('Failed to load services', err);
